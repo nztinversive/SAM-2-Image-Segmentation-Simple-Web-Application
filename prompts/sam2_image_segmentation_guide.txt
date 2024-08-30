@@ -10,7 +10,7 @@ SAM 2 Image Segmentation Application Guide
      - File input for image upload
      - "Segment Image" button
      - Result display area
-   - Use Tailwind CSS for styling
+   - Use Tailwind CSS for styling (via CDN)
 
 3. Frontend (JavaScript):
    - Implement image upload functionality
@@ -30,29 +30,39 @@ SAM 2 Image Segmentation Application Guide
 
 5. Environment Setup:
    - Store Replicate API token in .env file
+   - Install required Python packages: flask, flask-cors, requests, python-dotenv
 
 6. API Integration:
    - Use Replicate's SAM 2 model for image segmentation
+   - Model version: fe97b453a6455861e3bac769b441ca1f1086110da7466dbb65cf1eecfd60dc83
+   - API endpoint: https://api.replicate.com/v1/predictions
    - Handle API responses and format output for frontend
 
-7. Error Handling:
-   - Implement error checking and display in both frontend and backend
+7. Segmentation Configuration:
+   - Prompt: "Point out and segment all doors and windows in the image"
+   - Add a point prompt in the top-left corner: [[0, 0]]
+   - Set label to 1 (indicating a foreground point)
 
-8. Testing and Debugging:
+8. Error Handling:
+   - Implement error checking and display in both frontend and backend
+   - Use console.log in frontend and app.logger in backend for debugging
+
+9. Testing and Debugging:
    - Test image upload, segmentation process, and result display
    - Use logging in backend for debugging
 
 Key Points:
-- Frontend sends image data to backend
+- Frontend sends image data to backend as a data URL
 - Backend communicates with Replicate API
 - Application polls for results due to asynchronous processing
 - Results include combined and individual segmentation masks
 
-To recreate:
-1. Set up project structure
-2. Implement frontend with basic UI and JavaScript functions
-3. Create Flask backend with necessary routes
-4. Integrate Replicate API in backend
-5. Implement result polling and display in frontend
-6. Add error handling and logging
-7. Test thoroughly and debug as needed
+To run the application:
+1. Set up the project structure
+2. Install required Python packages: pip install flask flask-cors requests python-dotenv
+3. Create a .env file in the backend directory with your Replicate API token:
+   REPLICATE_API_TOKEN=your_api_token_here
+4. Start the Flask backend: python backend/app.py
+5. Open the frontend/index.html file in a web browser
+
+Note: Make sure to replace 'your_api_token_here' with your actual Replicate API token.

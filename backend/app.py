@@ -34,9 +34,9 @@ def segment_image():
         "version": "fe97b453a6455861e3bac769b441ca1f1086110da7466dbb65cf1eecfd60dc83",
         "input": {
             "image": data['input']['image'],
-            "prompt": "Point out and segment all doors and windows in the image",
+            "prompt": "Point out and segment all distinct objects in the image",
             "points": [[0, 0]],  # Add a point prompt in the top-left corner
-            "labels": [1],       # 1 indicates a foreground point  Old prompt: Point out and segment all distinct objects in the image
+            "labels": [1],       # 1 indicates a foreground point
         }
     }
     app.logger.info(f"Sending request to Replicate API")
