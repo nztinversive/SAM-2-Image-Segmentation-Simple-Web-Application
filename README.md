@@ -1,4 +1,4 @@
-# SAM 2 Image Segmentation Web Application
+# SAM 2 Image Segmentation Simple Web Application
 
 This project is a web application that uses the Segment Anything Model 2 (SAM 2) via the Replicate API to perform image segmentation. Users can upload an image, and the application will segment objects in the image, returning both a combined mask and individual object masks.
 
