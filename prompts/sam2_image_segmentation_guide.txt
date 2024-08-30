@@ -1,0 +1,58 @@
+SAM 2 Image Segmentation Application Guide
+
+1. Project Structure:
+   - Frontend: HTML, JavaScript
+   - Backend: Python with Flask
+   - Environment: .env file for API token
+
+2. Frontend (HTML):
+   - Create a simple HTML structure with:
+     - File input for image upload
+     - "Segment Image" button
+     - Result display area
+   - Use Tailwind CSS for styling
+
+3. Frontend (JavaScript):
+   - Implement image upload functionality
+   - Send segmentation request to backend
+   - Poll for segmentation results
+   - Display segmentation masks when ready
+
+4. Backend (Python with Flask):
+   - Set up Flask application with CORS support
+   - Create routes:
+     - Serve static files
+     - Handle segmentation requests
+     - Check segmentation status
+   - Integrate with Replicate API:
+     - Send segmentation requests
+     - Retrieve segmentation results
+
+5. Environment Setup:
+   - Store Replicate API token in .env file
+
+6. API Integration:
+   - Use Replicate's SAM 2 model for image segmentation
+   - Handle API responses and format output for frontend
+
+7. Error Handling:
+   - Implement error checking and display in both frontend and backend
+
+8. Testing and Debugging:
+   - Test image upload, segmentation process, and result display
+   - Use logging in backend for debugging
+
+Key Points:
+- Frontend sends image data to backend
+- Backend communicates with Replicate API
+- Application polls for results due to asynchronous processing
+- Results include combined and individual segmentation masks
+
+To recreate:
+1. Set up project structure
+2. Implement frontend with basic UI and JavaScript functions
+3. Create Flask backend with necessary routes
+4. Integrate Replicate API in backend
+5. Implement result polling and display in frontend
+6. Add error handling and logging
+7. Test thoroughly and debug as needed
